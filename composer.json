@@ -1,0 +1,24 @@
+{
+    "name": "waphp/wa",
+    "authors": [
+        {
+            "name": "'wangyusong'",
+            "email": "admin@wangyusong.com"
+        }
+    ],
+    "require": {
+    	"codingbean/macaw": "dev-master",
+        "illuminate/database": "*",
+         "filp/whoops": "*"
+    },
+    "autoload": {
+        "psr-4" :{
+            "App\\":"app/"
+
+            },
+        "classmap":[
+           "app/home/controllers",
+           "app/home/models"
+        ]
+    }
+}
