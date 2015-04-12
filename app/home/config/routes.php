@@ -1,11 +1,10 @@
 <?php
-use NoahBuscher\Macaw\Macaw as Routes;
 
-Routes::get('/',"IndexController@index");
-
+Route::get('/',"IndexController@index");
 
 
+Route::get('/test',"TestController@index");
 
-Routes::get("/hello",function(){
+Route::get("/hello",function(){
 	echo 'say hello!';
 });

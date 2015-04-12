@@ -4,39 +4,8 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f6fd28a76a0e1386612134237ad017c5",
+    "hash": "b061140315c4a6ee6a67298a38ac0436",
     "packages": [
-        {
-            "name": "codingbean/macaw",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/NoahBuscher/Macaw.git",
-                "reference": "ede398a876aa6c846756bc1b8ad92962ab298365"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/NoahBuscher/Macaw/zipball/ede398a876aa6c846756bc1b8ad92962ab298365",
-                "reference": "ede398a876aa6c846756bc1b8ad92962ab298365",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "NoahBuscher\\Macaw\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Sexy PHP router.",
-            "abandoned": "noahbuscher/macaw",
-            "time": "2014-12-23 22:41:20"
-        },
         {
             "name": "danielstjules/stringy",
             "version": "1.9.0",
@@ -460,6 +429,59 @@
             "time": "2015-03-26 03:05:57"
         },
         {
+            "name": "phpmailer/phpmailer",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHPMailer/PHPMailer.git",
+                "reference": "166ce3b533b6e23a88b929742032ac2940b7e7b7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/166ce3b533b6e23a88b929742032ac2940b7e7b7",
+                "reference": "166ce3b533b6e23a88b929742032ac2940b7e7b7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.0.0"
+            },
+            "require-dev": {
+                "phpdocumentor/phpdocumentor": "*",
+                "phpunit/phpunit": "4.3.*"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "class.phpmailer.php",
+                    "class.pop3.php",
+                    "class.smtp.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-2.1"
+            ],
+            "authors": [
+                {
+                    "name": "Jim Jagielski",
+                    "email": "jimjag@gmail.com"
+                },
+                {
+                    "name": "Marcus Bointon",
+                    "email": "phpmailer@synchromedia.co.uk"
+                },
+                {
+                    "name": "Andy Prevost",
+                    "email": "codeworxtech@users.sourceforge.net"
+                },
+                {
+                    "name": "Brent R. Matzelle"
+                }
+            ],
+            "description": "PHPMailer is a full-featured email creation and transfer class for PHP",
+            "time": "2015-04-14 11:13:26"
+        },
+        {
             "name": "symfony/translation",
             "version": "v2.6.6",
             "target-dir": "Symfony/Component/Translation",
@@ -523,7 +545,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "codingbean/macaw": 20
+        "phpmailer/phpmailer": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

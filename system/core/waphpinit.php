@@ -1,50 +1,47 @@
-<?php namespace Waphp;
+<?php
 
 
+class Waphpinit{
 
-class waphpinit{
 
-	/*
-	*	载入自定义类库和系统类库
-	*	
-	*
-	*/
-	
-	public function library($class)
+	public static function autoload($className)
 	{
-		$url = APP_PATH.'/library/'.$class.'.php';
-		
-		if (file_exists($url))
-		{
+		if(file_exists(APP_PATH.'/controllers/'.$className.".php")){
+			require APP_PATH.'/controllers/'.$className.".php";
+			}
+		if (file_exists(APP_PATH.'/models/'.$className.".php")) {
 			# code...
-			//用户自定义类
-			require $url;
-			return $this->$class = new $class();
-
+			require APP_PATH.'/controllers/'.$className.".php";
 		}
-		$url = SYSTEM_PATH.'/library/'.$class.'.php';
-		if (file_exists($url))
-		{
-			# code...
-			//系统提供类函数
-			require $url;
-			return $this->$class = new $class();
-		}
-
-		 //throw new UnexpectedValueException("您要加载的类不存在");
-
 	}
 
-	/*
-	*	载入自定义方法或者系统提供方法
-	*	
-	*
-	*/
-
-	public function helper($helper)
+	public static function Run()
 	{
-		echo $helper;
+			require SYSTEM_PATH."/core/Route.php";
+			//读取路由文件
+			require APP_PATH.'/config/routes.php';
+			//在此处读取钩子..
+
+			spl_autoload_register(array('Waphpinit','autoload'));
+			require SYSTEM_PATH."/core/Controller.php";
+			require SYSTEM_PATH."/core/View.php";
+			require SYSTEM_PATH."/core/Model.php";
+
+			//注册视图
+			$whoops = new \Whoops\Run;
+			$whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+			$whoops->register();
+			//注册出错路由.
+			Route::$error_callback = function() {
+			  throw new Exception("路由无匹配项 404 Not Found");
+			};
+			//设置配置环境.
+			setenv();
+			Route::dispatch();
 	}
+
+ 
+
 
 
 }

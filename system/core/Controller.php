@@ -1,7 +1,7 @@
 <?php
 namespace Waphp\Controller;
 use Waphp\View\View;
-use Waphp\waphpinit;
+
 
 
 class Controller{
@@ -12,7 +12,7 @@ class Controller{
 
       public function __construct()
       {
-         $this->load = new waphpinit();
+        // $this->load = new Waphpinit();
       }
 
       public function __destruct()

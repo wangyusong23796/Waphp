@@ -6,9 +6,11 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'IndexController' => $baseDir . '/app/home/controllers/IndexController.php',
+    'PHPMailer' => $vendorDir . '/phpmailer/phpmailer/class.phpmailer.php',
+    'POP3' => $vendorDir . '/phpmailer/phpmailer/class.pop3.php',
+    'SMTP' => $vendorDir . '/phpmailer/phpmailer/class.smtp.php',
     'Whoops\\Module' => $vendorDir . '/filp/whoops/src/deprecated/Zend/Module.php',
     'Whoops\\Provider\\Zend\\ExceptionStrategy' => $vendorDir . '/filp/whoops/src/deprecated/Zend/ExceptionStrategy.php',
     'Whoops\\Provider\\Zend\\RouteNotFoundStrategy' => $vendorDir . '/filp/whoops/src/deprecated/Zend/RouteNotFoundStrategy.php',
-    'app\\home\\models\\Article' => $baseDir . '/app/home/models/Article.php',
+    'phpmailerException' => $vendorDir . '/phpmailer/phpmailer/class.phpmailer.php',
 );
