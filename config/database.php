@@ -1,12 +1,14 @@
 <?php
 
+
+
 return[
   'driver'    => 'mysql',
-  'host'      => 'localhost',
-  'database'  => 'waphp',
-  'username'  => 'root',
-  'password'  => '',
-  'charset'   => 'utf8',
+  'host'      => env('DB_HOST','localhost'),
+  'database'  => env('DB_DATABASE','waphp'),
+  'username'  => env('DB_USERNAME','root'),
+  'password'  => env('DB_HOST',''),
+  'charset'   => env('DB_CHARSET','utf8'),
   'collation' => 'utf8_general_ci',
-  'prefix'    => ''
+  'prefix'    => env('DB_PREFIX','')
 ];

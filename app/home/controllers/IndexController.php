@@ -10,8 +10,8 @@ class IndexController extends Controller{
 
 	public function index()
 	{
-
-
+		$this->load->library("Mail");
+		
     	$this->view = View::make('home')->with('title',Article::first());
     }
 	

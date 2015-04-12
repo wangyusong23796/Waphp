@@ -6,4 +6,6 @@ Routes::get('/',"IndexController@index");
 
 
 
-
+Routes::get("/hello",function(){
+	echo 'say hello!';
+});

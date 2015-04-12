@@ -3,7 +3,8 @@
 
 use Illuminate\Database\Capsule\Manager as database;
 
-
+//引入系统公用函数.
+require SYSTEM_PATH."/common/Function.php";
 
 // Autoload 自动载入
 require ROOT_PATH."/vendor/autoload.php";
@@ -14,10 +15,10 @@ $capsule->bootEloquent();
 
 
 
+//引入核心初始化类
+require SYSTEM_PATH."/core/waphpinit.php";
 
 
-//引入系统公用函数.
-require SYSTEM_PATH."/common/Function.php";
 //引入控制器
 require SYSTEM_PATH."/core/Controller.php";
 //引入model
