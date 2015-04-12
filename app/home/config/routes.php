@@ -5,6 +5,8 @@ Route::get('/',"IndexController@index");
 
 Route::get('/test',"TestController@index");
 
-Route::get("/hello",function(){
-	echo 'say hello!';
-});
+
+
+Route::get("/say","IndexController@index");
+
+Route::post("/test","TestController@postindex");

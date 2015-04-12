@@ -6,6 +6,8 @@ class Route
     public static $halts = false;
 
     public static $routes = array();
+    //设置hooks
+    public static $hook = array();
 
     public static $methods = array();
 
@@ -27,10 +29,18 @@ class Route
         
         $uri = $params[0];
         $callback = $params[1];
+        if (!empty($params[2])) {
+            # code...
+            $hooks = $params[2];
+            array_push(self::$hook,$hooks);
+        }
+        
+        //第三个参数 设置hook
 
         array_push(self::$routes, $uri);
         array_push(self::$methods, strtoupper($method));
         array_push(self::$callbacks, $callback);
+
     }
 
     /**
@@ -62,9 +72,11 @@ class Route
         // check if route is defined without regex
         if (in_array($uri, self::$routes)) {
             $route_pos = array_keys(self::$routes, $uri);
+
             foreach ($route_pos as $route) {
 
                 if (self::$methods[$route] == $method) {
+
                     $found_route = true;
 
                     //if route is not an object 
@@ -78,7 +90,8 @@ class Route
 
                         //grab the controller name and method call
                         $segments = explode('@',$last);
-
+                        
+                        require APP_PATH."/controllers/".$segments[0].".php";
                         //instanitate controller
                         $controller = new $segments[0]();
 
@@ -93,6 +106,12 @@ class Route
                         
                         if (self::$halts) return;
                     }
+
+
+
+
+
+
                 }
             }
         } else {

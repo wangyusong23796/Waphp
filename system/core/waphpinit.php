@@ -8,7 +8,7 @@ class Waphpinit{
 	{
 		if(file_exists(APP_PATH.'/controllers/'.$className.".php")){
 			require APP_PATH.'/controllers/'.$className.".php";
-			}
+		}
 		if (file_exists(APP_PATH.'/models/'.$className.".php")) {
 			# code...
 			require APP_PATH.'/controllers/'.$className.".php";
