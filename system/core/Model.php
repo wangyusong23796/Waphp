@@ -10,7 +10,4 @@ class Model extends Orm_Model{
 		parent::__construct();
 		$this->timestamps = false;
 	}
-
-
-
 }

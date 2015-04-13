@@ -505,12 +505,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/PHPMailer/PHPMailer.git",
-            "reference": "166ce3b533b6e23a88b929742032ac2940b7e7b7"
+            "reference": "245d73be7fae265a38ba4729d778e01bd028f8fa"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/166ce3b533b6e23a88b929742032ac2940b7e7b7",
-            "reference": "166ce3b533b6e23a88b929742032ac2940b7e7b7",
+            "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/245d73be7fae265a38ba4729d778e01bd028f8fa",
+            "reference": "245d73be7fae265a38ba4729d778e01bd028f8fa",
             "shasum": ""
         },
         "require": {
@@ -520,7 +520,7 @@
             "phpdocumentor/phpdocumentor": "*",
             "phpunit/phpunit": "4.3.*"
         },
-        "time": "2015-04-14 11:13:26",
+        "time": "2015-04-17 13:10:54",
         "type": "library",
         "installation-source": "source",
         "autoload": {

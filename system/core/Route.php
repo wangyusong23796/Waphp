@@ -83,23 +83,50 @@ class Route
                     if(!is_object(self::$callbacks[$route])){
 
                         //grab all parts based on a / separator 
-                        $parts = explode('/',self::$callbacks[$route]); 
+                        $parts = explode('\\',self::$callbacks[$route]);
 
-                        //collect the last index of the array
-                        $last = end($parts);
+                        $path = '';
+                            switch (count($parts)) {
+                                case '2':
+                                    # code...
+                                    $path = "/controllers/".$parts[0]."/";
+                                    break;
+                                case '3':
+                                    $path = "/controllers/".$parts[0]."/".$parts[1]."/";
+                                    break;
+                                case '4':
+                                    $path = "/controllers/".$parts[0]."/".$parts[1]."/".$parts[2]."/";
+                                    break;
+                                case '5':
+                                    $path = "/controllers/".$parts[0]."/".$parts[1]."/".$parts[2]."/".$parts[3]."/";
+                                    break;
+                                default:
+                                    # code...
+                                    $path = "/controllers/";
+                                    break;
+                            }
 
-                        //grab the controller name and method call
-                        $segments = explode('@',$last);
-                        
-                        require APP_PATH."/controllers/".$segments[0].".php";
-                        //instanitate controller
-                        $controller = new $segments[0]();
 
-                        //call method
-                        $controller->$segments[1](); 
-                        
-                        if (self::$halts) return;
-                        
+
+
+                            //collect the last index of the array
+                            $last = end($parts);
+
+                            //grab the controller name and method call
+                            $segments = explode('@',$last);
+
+                            require APP_PATH.$path.$segments[0].".php";
+                            // 控制器前面的钩子
+                            //instanitate controller
+                            $controller = new $segments[0]();
+
+
+                            //方法前面的钩子
+                            //call method
+                            $controller->$segments[1](); 
+
+                            if (self::$halts) return;
+                          
                     } else {
                         //call closure
                         call_user_func(self::$callbacks[$route]);
@@ -133,14 +160,35 @@ class Route
                         if(!is_object(self::$callbacks[$pos])){
 
                             //grab all parts based on a / separator 
-                            $parts = explode('/',self::$callbacks[$pos]); 
-
+                            $parts = explode('\\',self::$callbacks[$pos]); 
+                            $path = '';
+                            switch (count($parts)) {
+                                case '2':
+                                    # code...
+                                    $path = "/controllers/".$parts[0]."/";
+                                    break;
+                                case '3':
+                                    $path = "/controllers/".$parts[0]."/".$parts[1]."/";
+                                    break;
+                                case '4':
+                                    $path = "/controllers/".$parts[0]."/".$parts[1]."/".$parts[2]."/";
+                                    break;
+                                case '5':
+                                    $path = "/controllers/".$parts[0]."/".$parts[1]."/".$parts[2]."/".$parts[3]."/";
+                                    break;
+                                default:
+                                    # code...
+                                    $path = "/controllers/";
+                                    break;
+                            }
                             //collect the last index of the array
                             $last = end($parts);
 
                             //grab the controller name and method call
                             $segments = explode('@',$last); 
-
+                            //实例化控制器
+                            require APP_PATH.$path.$segments[0].".php";
+                            
                             //instanitate controller
                             $controller = new $segments[0]();
 

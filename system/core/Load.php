@@ -1,5 +1,4 @@
-<?php
-
+<?php namespace Waphp\load;
 
 class load{
 
@@ -10,7 +9,7 @@ class load{
 	*
 	*/
 	
-	public function library($class)
+	public static function library($class)
 	{
 		$url = APP_PATH.'/library/'.$class.'.php';
 		

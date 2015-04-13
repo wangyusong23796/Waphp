@@ -7,6 +7,12 @@ Route::get('/test',"TestController@index");
 
 
 
-Route::get("/say","IndexController@index");
+Route::get("/say","admin\IndexController@index");
 
-Route::post("/test","TestController@postindex");
+Route::post("/test","TestController@postindex",['hook'=>'hookname']);
+
+// Route::group(['hook'=>'hookname'],function(){
+// 	Route::get("/say","admin\IndexController@index");
+	
+
+// });

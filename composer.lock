@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b061140315c4a6ee6a67298a38ac0436",
+    "hash": "b4a13ceb4d2a5ecb8b77e206f19d6b3a",
     "packages": [
         {
             "name": "danielstjules/stringy",
@@ -434,12 +434,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPMailer/PHPMailer.git",
-                "reference": "166ce3b533b6e23a88b929742032ac2940b7e7b7"
+                "reference": "245d73be7fae265a38ba4729d778e01bd028f8fa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/166ce3b533b6e23a88b929742032ac2940b7e7b7",
-                "reference": "166ce3b533b6e23a88b929742032ac2940b7e7b7",
+                "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/245d73be7fae265a38ba4729d778e01bd028f8fa",
+                "reference": "245d73be7fae265a38ba4729d778e01bd028f8fa",
                 "shasum": ""
             },
             "require": {
@@ -479,7 +479,7 @@
                 }
             ],
             "description": "PHPMailer is a full-featured email creation and transfer class for PHP",
-            "time": "2015-04-14 11:13:26"
+            "time": "2015-04-17 13:10:54"
         },
         {
             "name": "symfony/translation",
